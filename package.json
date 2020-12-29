@@ -31,7 +31,7 @@
     "@ngrx/effects": "^9.0.0",
     "@ngrx/entity": "^9.0.0",
     "@ngrx/router-store": "^9.0.0",
-    "@ngrx/store": "^9.0.0",
+    "@ngrx/store": "^9.2.1",
     "@ngrx/store-devtools": "^9.0.0",
     "core-js": "^2.5.4",
     "rxjs": "~6.5.4",

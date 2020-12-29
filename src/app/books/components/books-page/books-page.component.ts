@@ -1,22 +1,23 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
 import {
   BookModel,
   calculateBooksGrossEarnings,
-  BookRequiredProps
-} from "src/app/shared/models";
-import { BooksService } from "src/app/shared/services";
+  BookRequiredProps,
+} from 'src/app/shared/models';
+import { BooksService } from 'src/app/shared/services';
 
 @Component({
-  selector: "app-books",
-  templateUrl: "./books-page.component.html",
-  styleUrls: ["./books-page.component.css"]
+  selector: 'app-books',
+  templateUrl: './books-page.component.html',
+  styleUrls: ['./books-page.component.css'],
 })
 export class BooksPageComponent implements OnInit {
   books: BookModel[] = [];
   currentBook: BookModel | null = null;
   total: number = 0;
 
-  constructor(private booksService: BooksService) {}
+  constructor(private booksService: BooksService, private store: Store) {}
 
   ngOnInit() {
     this.getBooks();
@@ -24,7 +25,7 @@ export class BooksPageComponent implements OnInit {
   }
 
   getBooks() {
-    this.booksService.all().subscribe(books => {
+    this.booksService.all().subscribe((books) => {
       this.books = books;
       this.updateTotals(books);
     });
@@ -47,7 +48,7 @@ export class BooksPageComponent implements OnInit {
   }
 
   onSave(book: BookRequiredProps | BookModel) {
-    if ("id" in book) {
+    if ('id' in book) {
       this.updateBook(book);
     } else {
       this.saveBook(book);
