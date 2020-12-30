@@ -10,7 +10,7 @@
       "id": "408c6851-7b7a-439e-b6db-9fb65ea61071",
       "name": "The Adventures of Pinocchio",
       "earnings": "85000000",
-      "description": ""
+      "description": "Nice movie"
     },
     {
       "id": "3fe92243-8444-4ee4-bb39-b5460b8919f1",
@@ -19,10 +19,16 @@
       "description": null
     },
     {
-      "id": "723340fe-b6f8-4281-91f1-dd2e0387c589",
-      "name": "Vietnamese Pancake",
-      "earnings": "500000",
-      "description": "Banh xeo 3 mien"
+      "id": "eaa1455a-6ffc-4e11-906e-a0a748e027e4",
+      "name": "Vietnamese Sandwiches",
+      "earnings": "5000000",
+      "description": "Banh mi Viet Nam"
+    },
+    {
+      "id": "18946088-61a8-4203-8588-cea62171beae",
+      "name": "The Notebook",
+      "earnings": "20000",
+      "description": "Romance"
     }
   ]
 }

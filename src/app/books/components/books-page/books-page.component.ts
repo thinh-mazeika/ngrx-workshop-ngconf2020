@@ -44,11 +44,11 @@ export class BooksPageComponent implements OnInit {
   }
 
   onCancel() {
-    this.store.dispatch(BooksPageActions.clearSelectedBook());
     this.removeSelectedBook();
   }
 
   removeSelectedBook() {
+    this.store.dispatch(BooksPageActions.clearSelectedBook());
     this.currentBook = null;
   }
 
@@ -79,6 +79,7 @@ export class BooksPageComponent implements OnInit {
   }
 
   onDelete(book: BookModel) {
+    this.store.dispatch(BooksPageActions.deleteBook({ bookId: book.id }));
     this.booksService.delete(book.id).subscribe(() => {
       this.getBooks();
       this.removeSelectedBook();
