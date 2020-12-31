@@ -16,19 +16,7 @@
       "id": "3fe92243-8444-4ee4-bb39-b5460b8919f1",
       "name": "The Hobbit",
       "earnings": "100000000",
-      "description": "Wow, a block buster"
-    },
-    {
-      "id": "eaa1455a-6ffc-4e11-906e-a0a748e027e4",
-      "name": "Vietnamese Sandwiches",
-      "earnings": "5000000",
-      "description": "Banh mi Viet Nam"
-    },
-    {
-      "id": "18946088-61a8-4203-8588-cea62171beae",
-      "name": "The Notebook",
-      "earnings": "20000",
-      "description": "Romance"
+      "description": "00"
     }
   ]
 }
