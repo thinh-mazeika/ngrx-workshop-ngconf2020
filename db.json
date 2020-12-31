@@ -17,12 +17,6 @@
       "name": "The Hobbit",
       "earnings": "100000000",
       "description": "wow"
-    },
-    {
-      "id": "ab8c6cf8-c851-44e1-8a68-67045579e3b1",
-      "name": "Food",
-      "earnings": "200",
-      "description": "My favorite"
     }
   ]
 }
