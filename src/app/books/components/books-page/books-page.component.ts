@@ -62,10 +62,10 @@ export class BooksPageComponent implements OnInit {
 
   saveBook(bookProps: BookRequiredProps) {
     this.store.dispatch(BooksPageActions.createBook({ book: bookProps }));
-    this.booksService.create(bookProps).subscribe(() => {
-      this.store.dispatch(BooksApiActions.bookCreated({ book: bookProps }));
+    this.booksService.create(bookProps).subscribe((book) => {
       this.getBooks();
       this.removeSelectedBook();
+      this.store.dispatch(BooksApiActions.bookCreated({ book }));
     });
   }
 
