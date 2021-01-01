@@ -9,7 +9,7 @@ import { BooksPageActions, BooksApiActions } from './actions';
 export class BooksApiEffects {
   constructor(private actions$: Actions, private booksService: BooksService) {}
 
-  getAllBooks$ = createEffect(() => {
+  loadBooks$ = createEffect(() => {
     return this.actions$.pipe(
       ofType(BooksPageActions.enter),
       mergeMap((action) => {
