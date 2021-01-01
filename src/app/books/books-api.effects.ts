@@ -13,10 +13,10 @@ export class BooksApiEffects {
     return this.actions$.pipe(
       ofType(BooksPageActions.enter),
       mergeMap((action) => {
-        return this.booksService
-          .all()
-          .pipe(map((books) => BooksApiActions.booksLoadedSuccess({ books }))),
-          catchError((error) => of('Books Loaded Failure')
+        return this.booksService.all().pipe(
+          map((books) => BooksApiActions.booksLoadedSuccess({ books })),
+          catchError((error) => of({ type: 'Books Loaded Failure' }))
+        );
       })
     );
   });
