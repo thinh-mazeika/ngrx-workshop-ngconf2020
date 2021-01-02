@@ -34,7 +34,6 @@ export class BooksPageComponent implements OnInit {
 
   ngOnInit() {
     this.store.dispatch(BooksPageActions.enter());
-    this.removeSelectedBook();
   }
 
   onSelect(book: BookModel) {
@@ -78,10 +77,5 @@ export class BooksPageComponent implements OnInit {
 
   onDelete(book: BookModel) {
     this.store.dispatch(BooksPageActions.deleteBook({ bookId: book.id }));
-    this.booksService.delete(book.id).subscribe(() => {
-      this.store.dispatch(BooksApiActions.bookDeleted({ bookId: book.id }));
-
-      this.removeSelectedBook();
-    });
   }
 }
