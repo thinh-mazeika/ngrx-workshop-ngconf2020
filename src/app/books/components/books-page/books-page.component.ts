@@ -1,19 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import {
-  BookModel,
-  calculateBooksGrossEarnings,
-  BookRequiredProps,
-} from 'src/app/shared/models';
-import { BooksService } from 'src/app/shared/services';
+import { BookModel, BookRequiredProps } from 'src/app/shared/models';
+
 import {
   selectActiveBook,
   selectAllBooks,
   selectBooksEarningsTotals,
   State,
 } from 'src/app/shared/state';
-import { BooksPageActions, BooksApiActions } from '../../actions/index';
+import { BooksPageActions } from '../../actions/index';
 
 @Component({
   selector: 'app-books',
@@ -27,10 +23,7 @@ export class BooksPageComponent implements OnInit {
   );
   total$: Observable<number> = this.store.select(selectBooksEarningsTotals);
 
-  constructor(
-    private booksService: BooksService,
-    private store: Store<State>
-  ) {}
+  constructor(private store: Store<State>) {}
 
   ngOnInit() {
     this.store.dispatch(BooksPageActions.enter());

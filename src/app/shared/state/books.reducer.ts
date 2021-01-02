@@ -1,10 +1,7 @@
 import { createReducer, on, Action, createSelector } from '@ngrx/store';
-import {
-  BookModel,
-  BookRequiredProps,
-  calculateBooksGrossEarnings,
-} from 'src/app/shared/models';
+import { BookModel, calculateBooksGrossEarnings } from 'src/app/shared/models';
 import { BooksPageActions, BooksApiActions } from 'src/app/books/actions';
+import { EntityState, createEntityAdapter } from '@ngrx/entity';
 
 const createBook = (books: BookModel[], book: BookModel) => [...books, book];
 const updateBook = (books: BookModel[], changes: BookModel) =>
