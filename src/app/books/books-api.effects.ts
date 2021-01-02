@@ -30,9 +30,9 @@ export class BooksApiEffects {
   createBook$ = createEffect(() => {
     return this.actions$.pipe(
       ofType(BooksPageActions.createBook),
-      concatMap(({ book }) => {
+      concatMap((action) => {
         return this.booksService
-          .create(book)
+          .create(action.book)
           .pipe(map((book) => BooksApiActions.bookCreated({ book })));
       })
     );
@@ -41,9 +41,9 @@ export class BooksApiEffects {
   updateBook$ = createEffect(() => {
     return this.actions$.pipe(
       ofType(BooksPageActions.updateBook),
-      concatMap(({ bookId, changes }) => {
+      concatMap((action) => {
         return this.booksService
-          .update(bookId, changes)
+          .update(action.bookId, action.changes)
           .pipe(map((book) => BooksApiActions.bookUpdated({ book })));
       })
     );
