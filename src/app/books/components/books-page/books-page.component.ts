@@ -18,7 +18,7 @@ import { BooksPageActions } from '../../actions/index';
 })
 export class BooksPageComponent implements OnInit {
   books$: Observable<BookModel[]> = this.store.select(selectAllBooks);
-  currentBook$: Observable<BookModel | undefined> = this.store.select(
+  currentBook$: Observable<BookModel | null | undefined> = this.store.select(
     selectActiveBook
   );
   total$: Observable<number> = this.store.select(selectBooksEarningsTotals);

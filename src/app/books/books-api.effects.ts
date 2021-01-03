@@ -49,15 +49,16 @@ export class BooksApiEffects {
     );
   });
 
-  deleteBook$ = createEffect(
-    () => {
-      return this.actions$.pipe(
-        ofType(BooksPageActions.deleteBook),
-        mergeMap((action) => {
-          return this.booksService.delete(action.bookId);
-        })
-      );
-    },
-    { dispatch: false }
-  );
+  deleteBook$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(BooksPageActions.deleteBook),
+      mergeMap((action) => {
+        return this.booksService
+          .delete(action.bookId)
+          .pipe(
+            map(() => BooksApiActions.bookDeleted({ bookId: action.bookId }))
+          );
+      })
+    );
+  });
 }
